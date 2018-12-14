@@ -25,10 +25,13 @@ function main() {
         chatDiv.appendChild(p);
         input.value = "";
     }
-    function deleteFromDom(){
+    function deleteFromDom() {
+        var p = document.getElementsByTagName('p');
+        for (var i in p) {
+            if (p.length > 0)
+                chatDiv.removeChild(p[0]);
 
-        //pti grenq
-
+        }
     }
 
     socket.on('display message', handleMessage);
